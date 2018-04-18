@@ -1,0 +1,11 @@
+<div class="md-stepper-horizontal">
+  <div class="md-step" *ngFor = "let step of steps, let i = index"> 
+    <div class="md-step-circle"[@status] = "notCheked" (click) = "completeStep()" *ngIf = "i == counter"></div>
+    <div class="md-step-circle"[@status] = "notCheked" (click) = "completeStep()" *ngIf = "i < counter"></div>
+    <div class="md-step-circle"[@status] = "notCheked" (click) = "completeStep()" *ngIf = "i > counter"></div>
+
+    <div class="md-step-title">{{step.text}}</div>
+    <div class="md-step-bar-left"></div>
+    <div class="md-step-bar-right"></div>
+  </div>
+</div>
