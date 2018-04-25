@@ -1,0 +1,33 @@
+1. Instalar Node:
+    - Descarga: https://nodejs.org/en/download/
+    - Packet Manager: https://nodejs.org/en/download/package-manager/
+2. Instalar Serverless Framework
+    sudo npm install -g serverless
+
+#3. Instalar Google Cloud Functions
+#    npm install --save serverless-google-cloudfunctions
+
+3. Crear Proyecto en Google Cloud
+    - Unirse a la prueba gratuita para crear un billing account
+        ($300 USD iniciales).
+        https://cloud.google.com/functions/?hl=es
+    - Crear nuevo proyecto asociado a la cuenta de cobro gratis
+    - Activar APIs
+        - Google Cloud Functions
+        - Google Cloud Deployment Manager
+        - Google Cloud Storage (Usualmente ya habilitada)
+        - Stackdriver Logging (Usualmente ya habilitada)
+    - Crear credenciales para Serverless
+        - Cuenta de servicio
+        - Nuevo servicio
+        - Función: Proyecto->Propietario
+4. Crear servicio
+    serverless create --template google-nodejs --path my-service
+    cd my-service
+    npm install
+5. Agregar llaves a serverless.yml->provider->credentials (Path absoluto)
+    Insertar ID de proyecto a serverless.yml->provider->project
+
+6. Instalar Vision
+    npm install --save @google-cloud/vision
+7. Activar Vision en Cloud API
